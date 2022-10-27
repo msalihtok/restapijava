@@ -1,0 +1,75 @@
+
+package restapi;
+
+import java.io.Serializable;  
+import java.util.Objects;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+public class RESTApi {
+
+    /**
+     * @MSTOK's
+     */
+    public static void main(String[] args) {
+        class Eleman {
+
+            private Long id;
+            private String ad;
+            private String unvan;
+
+            Eleman() {}
+              
+        
+        Eleman(String ad, String unvan) {
+
+          this.ad = ad;
+          this.unvan = unvan;
+        }
+        public Long getId() {
+          return this.id;
+          }
+
+        public String getad() {
+          return this.ad;
+        }
+
+        public String getunvan() {
+          return this.unvan;
+        }
+
+        public void setId(Long id) {
+          this.id = id;
+        }
+
+        public void setad(String ad) {
+          this.ad = ad;
+        }
+
+        public void setunvan(String unvan) {
+          this.unvan = unvan;
+        }    
+        
+         @Override
+  public boolean equals(Object o) {
+
+    if (this == o)
+      return true;
+    if (!(o instanceof Eleman))
+      return false;
+    Eleman Eleman = (Eleman) o;
+    return Objects.equals(this.id, Eleman.id) && Objects.equals(this.ad, Eleman.ad)
+        && Objects.equals(this.unvan, Eleman.unvan);
+     }
+    @Override
+  public int hashCode() {
+    return Objects.hash(this.id, this.ad, this.unvan);
+    }     
+     public String toString() {
+    return "Employee{" + "id=" + this.id + ", İsim='" + this.ad + '\'' + ", Mevkisi ='" + this.unvan + '\'' + '}';
+  }
+        
+        }
+    }
+}
